@@ -28,7 +28,11 @@ const main = document.querySelector("main");
  
 
 //Creation de la zone filtres des projects
+export function filteredProjectsByCategory(categoryId){
+    const filteredProjects = projects.filter(project => project.categoryId === categoryId);
+    generateProjects(filteredProjects);
 
+}
 
 export function generateProjectsHead() {
 
@@ -45,7 +49,7 @@ export function generateProjectsHead() {
         <div id="filtres-container">
           <div class="categories">
             <button id="0" class="filtre-cat">Tous</button>
-         
+            
         </div>
 
         <div class="gallery"></div>
