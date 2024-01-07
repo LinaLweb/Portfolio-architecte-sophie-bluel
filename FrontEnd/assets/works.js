@@ -49,7 +49,7 @@ export function generateProjectsHead() {
         <div id="filtres-container">
           <div class="categories">
             <button id="0" class="filtre-cat">Tous</button>
-            
+            ${generateButtonsFiltres(category)}
         </div>
 
         <div class="gallery"></div>
@@ -70,7 +70,15 @@ export function generateProjectsHead() {
  
 
     //ici prochainement à génération des boutons de filtres
-
+    export function generateButtonsFiltres (categories) {
+        let buttonsHTML = "";
+        Object.values(categories).forEach(category => {
+            buttonsHTML +=`
+            <button data-category-id="${category.id}" class ="filtre-cat-${category.name.toLowerCase()}">${category.name}</button>
+            `;
+        });
+        return buttonsHTML;
+    }    
     
 
 //Creation des projects dans la galerie
