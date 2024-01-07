@@ -117,11 +117,21 @@ export function generateMainPage () {
     generateProjectsHead();
 
     generateProjects(projects);
+
+    addFiltreListener();
      
    
 };
 
-
+function addFiltreListener (){
+    const filtreButtons = document.querySelectorAll('[data-category-id]');
+    filtreButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const categoryId = button.dataset.categoryId;
+            filteredProjectsByCategory(categoryId);
+        });
+    });
+}
 
 
 
