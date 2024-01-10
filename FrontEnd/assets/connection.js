@@ -43,6 +43,6 @@ forgotPasswordLink.textContent = "Mot de passe oublié";
 form.appendChild(forgotPasswordLink);
 
 // Ajout du formulaire à la page //
-//document.body.appendChild(form);//
+document.body.appendChild(form);
 
-//generateMainPage();//
+generateMainPage();
