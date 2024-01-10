@@ -8,11 +8,11 @@ const projects = await projectsAPI.json();
 
  // récupération des catégories//
 
-const projectsCategory = await fetch("http://localhost:5678/api/categories");
+const projectsCategories = await fetch("http://localhost:5678/api/categories");
 
-const category = await projectsCategory.json();
+const categories = await projectsCategories.json();
 
-console.log (category);
+console.log (categories);
 
  
 
@@ -25,14 +25,7 @@ console.log (category);
 
 const main = document.querySelector("main");
 
- 
 
-//Creation de la zone filtres des projects
-export function filteredProjectsByCategory(categoryId){
-    const filteredProjects = projects.filter(project => project.categoryId === categoryId);
-    generateProjects(filteredProjects);
-
-}
 
 export function generateProjectsHead() {
 
@@ -49,7 +42,7 @@ export function generateProjectsHead() {
         <div id="filtres-container">
           <div class="categories">
             <button id="0" class="filtre-cat">Tous</button>
-            ${generateButtonsFiltres(category)}
+            
         </div>
 
         <div class="gallery"></div>
@@ -60,29 +53,29 @@ export function generateProjectsHead() {
  
 
     main.appendChild(projectsSection);
+    categories.forEach(category => {
 
-   
-}
- 
-
-    //ici prochainement à catégories
-
- 
-
-    //ici prochainement à génération des boutons de filtres
-    export function generateButtonsFiltres (categories) {
-        let buttonsHTML = "";
-        Object.values(categories).forEach(category => {
-            buttonsHTML +=`
-            <button data-category-id="${category.id}" class ="filtre-cat-${category.name.toLowerCase()}">${category.name}</button>
-            `;
+        const filtreCat = document.createElement("button");
+        filtreCat.id = category.id;
+        filtreCat.classList.add("filtre-cat");
+        filtreCat.innerText = category.name;
+        document.querySelector("#filtres-container").appendChild(filtreCat);
+    });
+    
+    //génération des boutons de filtres
+    const filtersBtns = document.querySelectorAll(".filtre-cat");
+    
+    filtersBtns.forEach(filterCat => {
+        filterCat.addEventListener("click", ()=> {
+    
+            const filteredProjects = projects.filter((project)=> {return project.category.id == filterCat.id});
+            !!+filterCat.id ? generateProjects(filteredProjects) : generateProjects(projects);
         });
-        return buttonsHTML;
-    }    
+    });
     
 
 //Creation des projects dans la galerie
-
+}
 export function generateProjects(projects) {
 
  
@@ -116,22 +109,9 @@ export function generateMainPage () {
 
     generateProjectsHead();
 
-    generateProjects(projects);
-
-    addFiltreListener();
-     
+    generateProjects(projects); 
    
 };
-
-function addFiltreListener (){
-    const filtreButtons = document.querySelectorAll('[data-category-id]');
-    filtreButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const categoryId = button.dataset.categoryId;
-            filteredProjectsByCategory(categoryId);
-        });
-    });
-}
 
 
 
