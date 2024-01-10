@@ -38,11 +38,11 @@ export function generateProjectsHead() {
     projectsSection.innerHTML = `
 
         <h2>Mes projets</h2>
-
+        
         <div id="filtres-container">
           <div class="categories">
             <button id="0" class="filtre-cat">Tous</button>
-            
+        </div>    
         </div>
 
         <div class="gallery"></div>
@@ -111,6 +111,7 @@ export function generateMainPage () {
 
     generateProjects(projects); 
    
+    
 };
 
 
