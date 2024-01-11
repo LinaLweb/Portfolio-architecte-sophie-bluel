@@ -192,8 +192,8 @@ footer nav ul {
 	font-weight: 700;
 	color: white;
 	background-color: #1D6154;
-	margin : 2em auto ;
-	width: 180px;
+	margin : 20px ;
+	width: 170px;
 	text-align: center;
 	border-radius: 60px ;
 }
@@ -203,11 +203,20 @@ footer nav ul {
 	font-weight: 700;
 	color: #1D6154;
 	background-color: #fffef9;
-	margin : 2em auto ;
+	margin : 20px ;
+	margin-left: -10px;
+	padding: 0px;
 	height: 40px;
-	width: 180px;
+	width: 170px;
 	text-align: center;
-	border-radius: 60px ;
+	border-radius: 60px ;	
+
 }
 
- 
+#filtres-container{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin:  20px;	
+}
+
