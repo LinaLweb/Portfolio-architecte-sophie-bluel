@@ -248,3 +248,17 @@ input {
 	margin: 10px;
 	width: 260px;
 }
+
+p {
+	margin-top: 20px;
+	margin-left: -225px;
+}
+
+p1 {
+margin-top: 20px;
+}
+
+textarea {
+	margin-top: 20px;
+	
+}
