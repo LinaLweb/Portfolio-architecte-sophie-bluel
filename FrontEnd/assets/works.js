@@ -126,7 +126,7 @@ const title = document.createElement("h2");
 title.textContent = "Contact";
 form.appendChild(title);
 
-const paragraph = document.createElement("p");
+const paragraph = document.createElement("p1");
 paragraph.textContent = "Vous avez un projet ? Discutons-en !";
 form.appendChild(paragraph);
 
