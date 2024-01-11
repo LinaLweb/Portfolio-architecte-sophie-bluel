@@ -223,9 +223,10 @@ footer nav ul {
 form {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	flex-direction: column;
 	flex-wrap: wrap;
-	margin-bottom: 40px;	
+	margin-top: 50px;
 }
 
 button {
