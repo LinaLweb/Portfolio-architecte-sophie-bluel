@@ -243,7 +243,8 @@ button {
 }
 
 input {
-	color: white;
+	color: black;
+	background-color: white;
 	padding: 10px;
 	margin: 10px;
 	width: 260px;
