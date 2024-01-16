@@ -54,7 +54,7 @@ form.addEventListener("submit", function (event){
    //Vérifie les informations de l'utilisateur pour le mot de passe//
    if (email === "utilisateur@test.com" && password === "mdp1") {
     // Redirection vers la page d'acceuil//
-    window.location.href = "./assets/works.js";
+    window.location.href = "./index.html";
    } else {
     // Affiche un message d'erreur//
     const errorMessage = document.createElement("p");
