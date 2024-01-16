@@ -52,7 +52,7 @@ form.addEventListener("submit", function (event){
     const password = passwordInput.value;
 
    //Vérifie les informations de l'utilisateur pour le mot de passe//
-   if (email === "utilisateur@test.com" && password === "motdepasse") {
+   if (email === "utilisateur@test.com" && password === "mdp1") {
     // Redirection vers la page d'acceuil//
     window.location.href = "./assets/works.js";
    } else {
