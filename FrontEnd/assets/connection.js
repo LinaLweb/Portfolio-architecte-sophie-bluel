@@ -58,7 +58,7 @@ form.addEventListener("submit", function (event){
    } else {
     // Affiche un message d'erreur//
     const errorMessage = document.createElement("p");
-    errorMessage.textContent = "Votre mot de passe est incorrect";
+    errorMessage.textContent = "Erreur dans l’identifiant ou le mot de passe";
     form.appendChild(errorMessage);
    }
 });
