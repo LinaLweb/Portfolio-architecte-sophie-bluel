@@ -8,7 +8,6 @@ export function generateEditionMode () {
     headerEM.innerHTML = `
     <div id="top-edit-mode">
     <i class="fa-regular fa-pen-to-square"></i>Mode édition
-    <button>publier les changements</button>
     </div>`;
 
     body.prepend(headerEM);
